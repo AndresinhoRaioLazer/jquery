@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hm</title>
+    <style type="text/css">
+        html{
+            text-align: center;
+        }
+        h1{
+            font-size: 90px;
+            text-align: center;
+            color: #8e0000;
+        }
+        #principal h2, #principal2 h2, #principal3 h2{
+            margin: 0px;
+            margin-left: 600px;
+            margin-right: 675px;
+            padding-left: 10px;
+            background-color: #8e0000;
+            color: white;
+            text-align: center;
+        }
+        #principal p, #principal2 p, #principal3 p{
+            border: 3px solid #8e0000;
+            margin-top: 0px;
+            margin-left: 600px;
+            margin-right: 675px;
+            color: #8e0000;
+            text-align: center;
+        }
+        .verde{
+            color: mediumspringgreen !important;
+        }
+        .azul{
+            color: blue !important;
+        }
+
+    </style>
+    <script src="jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+//MOSTRAR E OCULTAR
+
+        $("#ocultar").click(function(){
+            $("#principal").hide("slow");
+            $("#ocultar").hide();
+            $("#mostrar").show();
+        });
+        $("#mostrar").click(function(){
+            $("#principal").show("slow");
+            $("#mostrar").hide();
+            $("#ocultar").show();
+        });
+
+        $("#alternar").click(function () {
+            $("#princpal").toggle(5000);
+        });
+
+//FADE
+
+        $("#ocultarFade").click(function () {
+            $("#principal").fadeOut("slow");
+        });
+
+        $("#mostrarFade").click(function () {
+            $("#principal").fadeIn("slow");
+        });
+
+        $("#alternarFade").click(function () {
+            $("#principal").fadeToggle("slow");
+        });
+
+//SLIDE
+
+        $("#ocultarSlide").click(function () {
+            $("#principal").slideUp("slow");
+        });
+
+        $("#mostrarSlide").click(function () {
+            $("#principal").slideDown("slow");
+        });
+
+        $("#alternarSlide").click(function () {
+            $("#principal").slideToggle("slow");
+        });
+
+//accordion
+
+        $("div h2").dblclick(function () {
+            $(this).toggleClass("verde");
+        });
+
+        $("div h2").click(function () {
+             $(this).parent().find("p").slideToggle("slow");
+         });
+
+
+        $("div h2").hover(function () {
+            $(this).addClass('azul');
+        }, function () {
+            $(this).removeClass('azul');
+        });
+
+        });
+    </script>
+</head>
+<body>
+
+<h1>Prazer & Privilégio.</h1>
+
+<div class="botoes">
+<button id="mostrar">Show</button>
+<button id="ocultar">Hide</button>
+<button id="alternar">Toggle</button>
+
+<button id="mostrarFade">FadeIn</button>
+<button id="ocultarFade">FadeOut</button>
+<button id="alternarFade">FadeToggle</button>
+
+<button id="ocultarSlide">SlideUp</button>
+<button id="mostrarSlide">SlideDown</button>
+<button id="alternarSlide">SlideToggle</button>
+
+</div>
+
+<br>
+<br>
+
+<div>
+
+<div id="principal" class="accordion">
+    <h2>inesta</h2>
+    <p>loucura</p>
+</div>
+
+<div id="principal2" class="accordion">
+    <h2>didi ze</h2>
+    <p>q nao te kero</p>
+</div>
+
+<div id="principal3" class="accordion">
+    <h2>vonegan</h2>
+    <p>do asaparencias</p>
+</div>
+
+</div>
+
+</body>
+</html>
+
